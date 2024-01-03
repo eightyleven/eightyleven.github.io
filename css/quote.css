@@ -16,6 +16,10 @@ h1 {
 	color: #D0BA98;
 	border-radius: 15px;
 }
+#back-btn:hover {
+	color: #656666;
+	background-color: #D0BA98;
+}
 #quote{
 	margin-top: 20px;
 }

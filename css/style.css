@@ -20,3 +20,7 @@ h1 {
 #btn{
 	margin-top: 50px;
 }
+#generate-btn:hover{
+	color: #656666;
+	background-color: #D0BA98;
+}
