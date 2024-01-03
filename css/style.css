@@ -1,6 +1,7 @@
 body {
 	background-color: #656666;
 	font-family: 'Inter', sans-serif;
+	text-align: center;
 }
 h1 {
 	text-align: center;
@@ -13,6 +14,9 @@ h1 {
 	cursor: pointer;
 	background-color: #757575;
 	color: #D0BA98;
-	border-radius: 5px;
-	
+	border-radius: 15px;
+	left: 50%;
+}
+#btn{
+	margin-top: 50px;
 }

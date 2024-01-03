@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
   const kindnessList = [
-    "You are valuable and loved.",
-    "Your kindness makes a difference.",
+    "Кто прочитал, тот лох.",
+    "Тест2.",
     "You have a beautiful soul.",
     "Believe in yourself. You can do great things.",
     "Smile, you're amazing!",
