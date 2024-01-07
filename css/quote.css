@@ -14,7 +14,8 @@ h1 {
 	cursor: pointer;
 	background-color: #757575;
 	color: #D0BA98;
-	border-radius: 15px;
+	border-radius: 5em;
+	border: 6px solid #474747;
 }
 #back-btn:hover {
 	color: #656666;
