@@ -4,10 +4,12 @@
 }
 body {
     display: flex;
+    height: 100vh;
+    text-align: center;
+    font-family: "Grotesk", sans-serif;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    flex-direction: column;
 }
 .container {
     text-align: center;
@@ -20,5 +22,12 @@ button {
     padding: 10px 20px;
 }
 h1 {
+    text-align: center;
     font-family: "Grotesk", sans-serif;
+}
+#quote{
+	margin-top: 20px;
+}
+#kindness-display{
+	font-size: 20px;
 }
