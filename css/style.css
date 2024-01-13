@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "Grotesk";
+    src: url('Grotesk.ttf') format('truetype');
+}
 body {
     display: flex;
     justify-content: center;
@@ -5,11 +9,16 @@ body {
     height: 100vh;
     margin: 0;
 }
-
 .container {
     text-align: center;
 }
-
 button {
     margin-top: 20px;
+    font-family: "Grotesk", sans-serif;
+    border-radius: 3em;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+h1 {
+    font-family: "Grotesk", sans-serif;
 }
