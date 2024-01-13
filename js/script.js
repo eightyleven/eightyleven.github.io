@@ -17,6 +17,6 @@ function showStoicQuote() {
         // Redirect to quote.html
         window.location.href = "quote.html";
     } else {
-        alert("You've exceeded the maximum attempts within the last 24 hours.");
+        alert("Вибачте, але цитату можна отримати лише три рази в 24 години. Повертайтеся пізніше!");
     }
-}
+}  

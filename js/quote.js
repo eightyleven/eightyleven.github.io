@@ -1,22 +1,32 @@
-let remainingAttempts = 3;
+document.addEventListener("DOMContentLoaded", function () {
+  // Retrieve stored quote from localStorage
+  const storedQuote = localStorage.getItem('stoicQuote');
 
-function showStoicQuote() {
-    // Retrieve stored timestamps from localStorage
-    const clickTimestamps = JSON.parse(localStorage.getItem('clickTimestamps')) || [];
+  // Array of stoic quotes
+  const stoicQuotes = [
+      "The best revenge is to be unlike him who performed the injustice.",
+      "It is not that we have a short time to live, but that we waste much of it.",
+      "He who fears death will never do anything worth of a man who is alive.",
+      // Add more quotes as needed
+  ];
 
-    // Check if the user has exceeded the allowed attempts within the last 24 hours
-    const currentTime = new Date().getTime();
-    const last24Hours = 24 * 60 * 60 * 1000;
-    const recentClicks = clickTimestamps.filter(timestamp => currentTime - timestamp < last24Hours);
+  // Function to get a random quote
+  function getRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * stoicQuotes.length);
+      return stoicQuotes[randomIndex];
+  }
 
-    if (recentClicks.length < remainingAttempts) {
-        // Store the current timestamp
-        clickTimestamps.push(currentTime);
-        localStorage.setItem('clickTimestamps', JSON.stringify(clickTimestamps));
+  // Determine the quote to display
+  const quoteToShow = storedQuote || getRandomQuote();
 
-        // Redirect to quote.html
-        window.location.href = "quote.html";
-    } else {
-        alert("You've exceeded the maximum attempts within the last 24 hours.");
-    }
+  // Display the stoic quote
+  document.getElementById("stoicQuote").innerText = quoteToShow;
+
+  // Save the quote to localStorage
+  localStorage.setItem('stoicQuote', quoteToShow);
+});
+
+// Redirect to index.html on page refresh
+if (performance.navigation.type == 1) {
+  window.location.href = "index.html";
 }
