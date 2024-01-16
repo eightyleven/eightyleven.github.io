@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Grotesk";
-    src: url('Grotesk.ttf') format('truetype');
+    src: url('font/Grotesk.ttf') format('truetype');
 }
 body {
     background-color: #221D23;
@@ -24,6 +24,10 @@ button {
     padding: 10px 20px;
     color: #4F3824;
     border: #4F3824 solid;
+}
+button:hover{
+    background-color: #704f33;
+    color: #221D23;
 }
 h1 {
     font-family: "Grotesk", sans-serif;

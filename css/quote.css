@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Grotesk";
-    src: url('Grotesk.ttf') format('truetype');
+    src: url('font/Grotesk.ttf') format('truetype');
 }
 body {
     background-color: #221D23;
