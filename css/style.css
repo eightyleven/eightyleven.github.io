@@ -96,9 +96,12 @@ nav ul li a:hover::after{
     text-decoration: none;
 }
 .new-quote-button a{
-    color: #ebebed;
+    color: #F1E9D2;
     text-decoration: none;
     font-weight: 700;
+}
+.new-quote-button a:hover{
+    color: #FFA500;
 }
 #about{
     padding: 80px 0;
