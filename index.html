@@ -5,13 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Welcome</title>
+    <script src="https://kit.fontawesome.com/bc0d28a4c3.js" crossorigin="anonymous"></script>
+    <title>головна</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Натисніть, щоб отримати цитату</h1>
-        <button id="quoteButton" onclick="showStoicQuote()">Ваша Цитата</button>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1>8011</h1>
+                <ul id="sidemenu">
+                    <li><a class="js-scroll"  href="#header">Головна</a></li>
+                    <li><a class="js-scroll" href="#about">Про Автора</a></li>
+                    <li><a class="js-scroll" href="#prediction">Передбачення</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav> 
+            <div class="header-text">
+                <p>Передбачення від</p>
+                <h1>eightyleven</h1>
+                <div class="button-1">
+                    <a class="js-scroll" href="#about" id="btn" class="button">вперед</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="js/script.js"></script>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-1">
+                    <img src="img/eightyleven2.png">
+                </div>
+                <div class="about-2">
+                    <h1 class="About-me-name">Про Автора:</h1>
+                    <p>instagram - @_eightyleven</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="prediction">
+        <div class="container">
+            <div class="pre-prediction">
+                <h2>Клацніть на кнопку нижче, щоб отримати передбачення</h2>
+            </div>
+            <div class="button">
+                <button id="btn2" class="btn-large new-quote-button">
+                    <a href="prediction.html" onclick="showStoicQuote()">передбачення</a>
+                </button>
+            </div>
+        </div>
+    </div>
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0"
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px"
+    }
+    $('.js-scroll').click(function () {
+        var id = $(this).attr("href");
+        var offset = 0;
+        var target = $(id).offset().top - offset;
+        $('html, body').animate({
+            scrollTop: target
+        }, 500); /* Час анімованого скролу до секції документу */
+        return false;
+    });
+</script>
+<script src="js/script.js"></script>
 </body>
 </html>
