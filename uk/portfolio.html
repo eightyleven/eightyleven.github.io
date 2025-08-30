@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <script src="https://kit.fontawesome.com/bc0d28a4c3.js" crossorigin="anonymous"></script>
+    <title>фото</title>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div class="lang-dropdown">
+                    <h1 class="lang-btn">8011</h1>
+                        <div class="lang-menu">
+                            <a href="/portfolio.html">English</a>
+                            <a href="/uk/portfolio.html">Українська</a>
+                        </div>
+                </div>
+                <ul id="sidemenu">
+                    <li><a class="js-scroll" href="index.html">Головна</a></li>
+                    <li><a class="js-scroll" href="portfolio.html">Фото</a></li>
+                    <li><a class="js-scroll" href="predictionpage.html">Передбачення</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav> 
+        </div>
+    </div>
+    <div class="portfolio-slider">
+        <button class="arrow left" onclick="prevImage()">&#10094;</button>
+        
+        <div class="image-container">
+          <img id="portfolioImage" src="img/photo1.jpg" alt="Portfolio image">
+        </div>
+        
+        <button class="arrow right" onclick="nextImage()">&#10095;</button>
+      </div>
+<script>
+    const images = [
+        "../img/IMG_6868.jpg",
+        "../img/IMG_6874.jpg",
+        "../img/IMG_6877.jpg",
+        "../img/IMG_6882.jpg",
+        "../img/IMG_6902.jpg",
+        "../img/IMG_6903.jpg",
+        "../img/IMG_6904.jpg",
+        "../img/IMG_6907.jpg",
+        "../img/IMG_6912.jpg",
+        "../img/IMG_6913.jpg",
+        "../img/IMG_6916.jpg",
+        "../img/IMG_6917.jpg",
+        "../img/IMG_6918.jpg",
+        "../img/IMG_6919.jpg",
+        "../img/IMG_6921.jpg",
+        "../img/IMG_6922.jpg",
+        "../img/IMG_6924.jpg",
+        "../img/IMG_6925.jpg",
+        "../img/IMG_6927.jpg",
+        "../img/IMG_6928.jpg",
+        "../img/IMG_6930.jpg",
+        "../img/IMG_6933.jpg",
+        "../img/IMG_6936.jpg",
+        "../img/IMG_6937.jpg",
+        "../img/IMG_6938.jpg",
+        "../img/IMG_6939.jpg",
+        "../img/IMG_6942.jpg"
+    ];
+
+    let currentIndex = 0;
+    const imgElement = document.getElementById("portfolioImage");
+
+    function showImage(index) {
+    imgElement.classList.add("fade");
+    setTimeout(() => {
+        imgElement.src = images[index];
+        imgElement.classList.remove("fade");
+    }, 200);
+    }
+
+    function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+    }
+
+    function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+    }
+
+    showImage(currentIndex);
+    document.querySelector(".lang-btn").addEventListener("click", function() {
+    this.parentElement.classList.toggle("show");
+    });
+
+    window.addEventListener("click", function(e) {
+    if (!e.target.closest('.lang-dropdown')) {
+        document.querySelectorAll(".lang-dropdown").forEach(dropdown => {
+        dropdown.classList.remove("show");
+        });
+    }
+    });
+    const links = document.querySelectorAll("nav ul li a");
+    const current = window.location.pathname;
+      
+    links.forEach(link => {
+        if (current.endsWith(link.getAttribute("href"))) {
+        link.classList.add("active");
+        }
+    });
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0"
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px"
+    }
+    window.addEventListener("click", function(e) {
+    if (!sidemenu.contains(e.target) && !menuIcon.contains(e.target)) {
+        closemenu();
+    }
+    })
+    $('.js-scroll').click(function () {
+        var id = $(this).attr("href");
+        var offset = 0;
+        var target = $(id).offset().top - offset;
+        $('html, body').animate({
+            scrollTop: target
+        }, 500); /* Час анімованого скролу до секції документу */
+        return false;
+    });
+</script>
+</body>
+</html>

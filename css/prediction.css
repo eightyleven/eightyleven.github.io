@@ -12,12 +12,16 @@ body{
     background: #F1E9D2;
     color: black;
 }
+#smaller-text{
+    margin-top: 10px;
+    font-size: 12px;
+}
 #quote{
     text-align: center;
-    padding-top: 50px;
+    padding-top: 80px;
 }
 .phrase{
-    margin-top: 100px;
+    margin-top: 60px;
 }
 #kindness-display{
     font-size: 25px;

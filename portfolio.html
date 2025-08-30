@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
     <link rel="icon" type="image/png" href="../img/favicon.png">
     <script src="https://kit.fontawesome.com/bc0d28a4c3.js" crossorigin="anonymous"></script>
-    <title>about</title>
+    <title>photo</title>
 </head>
 <body>
     <div id="header">
@@ -16,8 +16,8 @@
                 <div class="lang-dropdown">
                     <h1 class="lang-btn">8011</h1>
                         <div class="lang-menu">
-                            <a href="/index.html">English</a>
-                            <a href="/uk/index.html">Українська</a>
+                            <a href="/portfolio.html">English</a>
+                            <a href="/uk/portfolio.html">Українська</a>
                         </div>
                 </div>
                 <ul id="sidemenu">
@@ -28,49 +28,74 @@
                 </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav> 
-            <div class="header-text">
-                <p>hello, I'm</p>
-                <p class="name">Dmytro (@_eightyleven)</p>
-                <div class="button-1">
-                    <a class="js-scroll" href="#about" id="btn" class="button">more</a>
-                </div>
-            </div>
         </div>
     </div>
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-1">
-                    <img src="img/eightyleven.png">
-                </div>
-                <div class="about-2">
-                    <h1 class="About-me-name">about me:</h1>
-                    <p class="about-long">I am a writer and photographer working with culture, cinema, and literature, sharing whatever catches my eye.</p>
-                    <a href="https://instagram.com/_eightyleven" target="_blank" id="socials">instagram /</a>
-                    <a href="https://medium.com/@_eightyleven" target="_blank" id="socials">medium</a>
-                </div>
-            </div>
+    <div class="portfolio-slider">
+        <button class="arrow left" onclick="prevImage()">&#10094;</button>
+        
+        <div class="image-container">
+          <img id="portfolioImage" src="img/photo1.jpg" alt="Portfolio image">
         </div>
-    </div>
-    <!--<div id="prediction">
-        <div class="container">
-            <div class="pre-prediction">
-                <h2>Клацніть на кнопку нижче, щоб отримати передбачення</h2>
-            </div>
-            <div class="button">
-                <button id="btn2" class="btn-large new-quote-button">
-                    <a href="prediction.html" onclick="showStoicQuote()" class="button">передбачення</a>
-                </button>
-            </div>
-        </div>
-    </div>
-    -->
+        
+        <button class="arrow right" onclick="nextImage()">&#10095;</button>
+      </div>
 <script>
+    const images = [
+        "../img/IMG_6868.jpg",
+        "../img/IMG_6874.jpg",
+        "../img/IMG_6877.jpg",
+        "../img/IMG_6882.jpg",
+        "../img/IMG_6902.jpg",
+        "../img/IMG_6903.jpg",
+        "../img/IMG_6904.jpg",
+        "../img/IMG_6907.jpg",
+        "../img/IMG_6912.jpg",
+        "../img/IMG_6913.jpg",
+        "../img/IMG_6916.jpg",
+        "../img/IMG_6917.jpg",
+        "../img/IMG_6918.jpg",
+        "../img/IMG_6919.jpg",
+        "../img/IMG_6921.jpg",
+        "../img/IMG_6922.jpg",
+        "../img/IMG_6924.jpg",
+        "../img/IMG_6925.jpg",
+        "../img/IMG_6927.jpg",
+        "../img/IMG_6928.jpg",
+        "../img/IMG_6930.jpg",
+        "../img/IMG_6933.jpg",
+        "../img/IMG_6936.jpg",
+        "../img/IMG_6937.jpg",
+        "../img/IMG_6938.jpg",
+        "../img/IMG_6939.jpg",
+        "../img/IMG_6942.jpg"
+    ];
+
+    let currentIndex = 0;
+    const imgElement = document.getElementById("portfolioImage");
+
+    function showImage(index) {
+    imgElement.classList.add("fade");
+    setTimeout(() => {
+        imgElement.src = images[index];
+        imgElement.classList.remove("fade");
+    }, 200);
+    }
+
+    function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+    }
+
+    function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+    }
+
+    showImage(currentIndex);
     document.querySelector(".lang-btn").addEventListener("click", function() {
     this.parentElement.classList.toggle("show");
     });
 
-    // Close dropdown if clicking outside
     window.addEventListener("click", function(e) {
     if (!e.target.closest('.lang-dropdown')) {
         document.querySelectorAll(".lang-dropdown").forEach(dropdown => {
@@ -87,7 +112,6 @@
         }
     });
     var sidemenu = document.getElementById("sidemenu");
-    var menuIcon = document.querySelector(".fa-bars");
 
     function openmenu(){
         sidemenu.style.right = "0"
@@ -110,6 +134,5 @@
         return false;
     });
 </script>
-<script src="../js/script.js"></script>
 </body>
 </html>
