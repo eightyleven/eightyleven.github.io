@@ -197,46 +197,57 @@ nav .fas{
 .lang-dropdown.show .lang-menu {
     display: block;
 }
-
-.portfolio-slider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    max-width: 90%;   /* keeps it inside screen */
-    margin: 15vh auto;
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 20px;
 }
   
-.image-container {
+.portfolio-gallery img {
     width: 100%;
-    max-width: 700px;   /* max size for desktop */
-    width: 100%;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    height: auto;  
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    object-fit: contain; 
     background: #F1E9D2; 
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.portfolio-gallery img:hover {
+    transform: scale(1.02);
 }
   
-.image-container img {
+  /* Lightbox Overlay */
+.lightbox {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
 }
   
-.arrow {
-    background: none;
-    border: none;
+  /* Lightbox Image */
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+  
+  /* Close button */
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
     font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
     cursor: pointer;
-    color: #333;
-    transition: color 0.3s;
 }
-  
-.arrow:hover {
-    color: #666;
-}
-  
