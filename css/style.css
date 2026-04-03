@@ -24,7 +24,7 @@ p{
 }
 body{
     background: #F1E9D2;
-    color: bla  ck;
+    color: #1A1A1A;
 }
 #header{
     margin-top: 20px;
@@ -48,7 +48,7 @@ nav ul li{
     margin: 10px 20px;
 }
 nav ul li a{
-    color: black;
+    color: #1D1D1D;
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -57,7 +57,7 @@ nav ul li a::after{
     content: '';
     width: 0;
     height: 3px;
-    background: black;
+    background: #1A1A1A;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -82,16 +82,15 @@ nav ul li a.active::after{
     margin-top: 35px;
 }
 .button-1 a{
-    background-color: black;
+    background-color: #1A1A1A;
     color: #F1E9D2;
     text-decoration: none;
     border-radius: 5em;
     text-align: center;
     padding: 15px;
-    
 }
 .button-1 a:hover{
-    color:#FFA500;
+    color: #FFA500;
 }
 #prediction{
     margin-top: 60px;
@@ -102,8 +101,8 @@ nav ul li a.active::after{
 .new-quote-button{
     margin-top: 50px;
     position: absolute;
-    color: #F1E9D2;
-    background: #1D1D1B;
+    color: #1A1A1A;
+    background: #1A1A1A;
     border-radius: 100px;
     padding: 10px 45px;
     font-size: 1.3em;
@@ -188,7 +187,8 @@ nav .fas{
     }
     #socials{
         text-decoration: none;
-        color: black;
+        color: #F1E9D2
+;
         font-size: 5px;
         display: inline-block;
         padding-right: 15px;
@@ -244,7 +244,7 @@ nav .fas{
     display: block;
     padding: 8px 12px;
     text-decoration: none;
-    color: black;
+    color: #1A1A1A;
 }
   
 .lang-menu a:hover{
@@ -256,7 +256,7 @@ nav .fas{
 }
 #socials{
     text-decoration: none;
-    color: black;
+    color: #1A1A1A;
     font-size: 25px;
     display: inline-block;
     padding-right: 15px;

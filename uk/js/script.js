@@ -1,24 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Determine the quote to display
-    const quoteToShow = storedQuote || getRandomQuote();
-  
-    // Display the stoic quote
-    document.getElementById("stoicQuote").innerText = quoteToShow;
-  
-    // Save the quote to localStorage
-    localStorage.setItem('stoicQuote', quoteToShow);
-  });
-  
-  // Redirect to index.html on page refresh
-  if (performance.navigation.type == 1) {
-    window.location.href = "index.html";
-  }
-  document.addEventListener("DOMContentLoaded", function() {
-    displayRandomKindness();
-  });
-  
-  const kindnessList = [
-    "Люди, будьте взаємно красивими.",
+  // We removed the broken stoicQuote variables and function calls here.
+  // Now the browser will successfully reach and execute your kindness display.
+  displayRandomKindness();
+});
+
+// Modernized refresh detection
+if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
+  window.location.href = "index.html";
+}
+
+const kindnessList = [
+  "Люди, будьте взаємно красивими.",
     "Настав час прочитати книжку, яку Ви довго не могли взяти в руки.",
     "Посміхніться, Вам це личить.",
     "Ось-ось і мрії почнуть здійснюватися.",
@@ -77,10 +69,13 @@ document.addEventListener("DOMContentLoaded", function () {
     "Не чиніть опір новому, життя зміниться в кращу сторону",    
     "Вас чекає цікава пригода",    
     "Просто скажіть «Так!»",   
-  ];
-  
-  function displayRandomKindness() {
-    const kindnessDisplay = document.getElementById('kindness-display');
-    const randomIndex = Math.floor(Math.random() * kindnessList.length);
-    kindnessDisplay.textContent = kindnessList[randomIndex];
+];
+
+function displayRandomKindness() {
+  const kindnessDisplay = document.getElementById('kindness-display');
+  // Add a safety check just in case this runs on a page without the element
+  if (kindnessDisplay) { 
+      const randomIndex = Math.floor(Math.random() * kindnessList.length);
+      kindnessDisplay.textContent = kindnessList[randomIndex];
   }
+}

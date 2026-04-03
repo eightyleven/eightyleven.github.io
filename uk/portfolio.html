@@ -31,14 +31,16 @@
         </div>
     </div>
     <div class="portfolio-gallery">
-        <img src="../img/IMG_7149.png" alt="photo 1">
-        <img src="../img/IMG_6922.jpg" alt="photo 2">
-        <img src="../img/IMG_6939.jpg" alt="photo 3">
-        <img src="../img/IMG_6942.jpg" alt="photo 5">
-        <img src="../img/IMG_6943.jpg" alt="photo 6">
-        <img src="../img/P1010002.png" alt="photo 7">
-        <img src="../img/P2160032.png" alt="photo 8">
-        <img src="../img/P3020038.png" alt="photo 9">
+        <img src="../img/IMG_6939.png" alt="photo 1">
+        <img src="../img/IMG_6942.png" alt="photo 2">
+        <img src="../img/IMG_6943.png" alt="photo 3">
+        <img src="../img/IMG_7149.png" alt="photo 4">
+        <img src="../img/IMG_7727.jpg" alt="photo 5">
+        <img src="../img/IMG_7728.jpg" alt="photo 6">
+        <img src="../img/IMG_7732.jpg" alt="photo 7">
+        <img src="../img/IMG_7738.jpg" alt="photo 8">
+        <img src="../img/IMG_7740.jpg" alt="photo 9">
+        <img src="../img/P3020038.png" alt="photo 10">
     </div>
     <div id="lightbox" class="lightbox">
         <span class="close">&times;</span>
@@ -86,6 +88,7 @@
         }
     });
     var sidemenu = document.getElementById("sidemenu");
+    var menuIcon = document.querySelector(".fa-bars");
 
     function openmenu(){
         sidemenu.style.right = "0"
@@ -106,6 +109,11 @@
             scrollTop: target
         }, 500); /* Час анімованого скролу до секції документу */
         return false;
+    });
+    document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape" && lightbox.style.display === "flex") {
+        lightbox.style.display = "none";
+    }
     });
 </script>
 </body>
